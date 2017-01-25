@@ -3,7 +3,7 @@
   <ul class = "contact-list">
   <% Contact.all.each do |contact| %>
   <div class = contact-box>
-    <li class = "contact-names"><h2 class = "contact-details"><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</h2></li>
+    <li class = "contact-names"><h2 class = "contact-details"><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</a></h2></li>
     <p class = "link-detail"><a class = "edit-link" href=#>Edit</a> | <a class = "delete-link" href=#>Delete</a>
   </div>
   <% end %>
