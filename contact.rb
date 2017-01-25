@@ -47,7 +47,7 @@ class Contact
         return contact
       end
     end
-    "No match for id ##{id}"
+    nil 
   end
 
   # This method should allow you to specify
