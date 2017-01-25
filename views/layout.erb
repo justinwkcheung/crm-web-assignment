@@ -6,8 +6,23 @@
   <title>Contact Page</title>
 </head>
 <body>
+  <header>
+    <h1 class = "title">Bitmaker CRM</h1>
+  </header>
+  <nav>
+    <ul class = "nav-list">
+      <li class = "nav-items"><a class = "nav-link" href="/">Home</a></li>
+      <li class = "nav-items"><a class = "nav-link" href="/contacts/new">Add new contact<a/></li>
+      <li class = "nav-items"><a class = "nav-link" href=#>About<a/></li>
+    </ul>
+  </nav>
 
   <%= yield %>
 
+  <footer>
+    <h4 class = "footer-title">
+      © Bitmaker 2016
+    </h4>
+  </footer>
 </body>
 </html>

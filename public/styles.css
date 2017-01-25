@@ -12,11 +12,24 @@ html {
   /*border: 100px solid orange;*/
 }
 
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+main {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .title {
   text-align: center;
   background-color: black;
   color: white;
   margin-bottom: 2px;
+  padding: 16px;
 }
 
 .nav-list {
@@ -25,15 +38,56 @@ html {
 }
 
 .nav-items {
-  background-color: grey;
+  background-color: lightgrey;
   color: white;
   text-align: center;
   text-decoration: none;
   line-height: 1.5;
   margin-bottom: 2px;
+  padding: 7px;
 }
-
-a {
+.nav-link {
   text-decoration: none;
   color: white;
+}
+
+.footer-title {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 0;
+}
+.contact-box {
+    background-color: #5cd6d6;
+    text-decoration: none;
+}
+
+.contact-number {
+  border-bottom: 0.25rem solid #5cd6d6;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.contact-count {
+  padding: 0.85rem;
+  margin-bottom: 0;
+  background-color: salmon;
+  font-weight: lighter;
+}
+.contact-box {
+    padding: .85rem;
+    margin: 0.75rem 0;
+}
+
+.contact-list {
+    margin-top: 0.75rem;
+}
+
+.contact-details {
+  margin-bottom: 4px;
+}
+
+.link-details {
+  margin-top: 4px;
 }

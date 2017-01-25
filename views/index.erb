@@ -1,27 +1,11 @@
-
-
-<!-- <h1>Welcome to <%= @crm_app_name %>!</h1>
-<p>Main menu</p>
-<ul>
-  <li><a href="/contacts">View all contacts</a></li>
-  <li><a href="/contacts/new">Add new contact</li>
-</ul> -->
-
-<header>
-  <h1 class = "title">Bitmaker CRM</h1>
-</header>
-<nav>
-  <ul class = "nav-list">
-    <li class = "nav-items"><a href="/contacts">Home</a></li>
-    <li class = "nav-items"><a href="/contacts/new">Add new contact<a/></li>
-    <li class = "nav-items"><a href=#>About<a/></li>
-
-
+<main>
+  <h3 class = "contact-count">There are <span class = "contact-number"><%=Contact.all.count%></span> contacts</h3>
+  <ul class = "contact-list">
+  <% Contact.all.each do |contact| %>
+  <div class = contact-box>
+    <li class = "contact-names"><h2 class = "contact-details"><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</h2></li>
+    <p class = "link-details"><a class = "edit-link" href=#>Edit</a> | <a class = "delete-link" href=#>Delete</a>
+  </div>
+  <% end %>
   </ul>
-</nav>
-<!-- <main>
-
 </main>
-<<footer>
-
-</footer> -->
