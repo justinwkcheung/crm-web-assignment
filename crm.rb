@@ -4,9 +4,9 @@
 require 'sinatra'
 require_relative 'contact'
 
-# Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
-# Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
-# Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
+Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
+Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get '/' do
   # @crm_app_name = "Justin's CRM"
@@ -24,4 +24,9 @@ end
 post '/' do
   Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
   redirect to('/')
+end
+
+get '/contacts/1000' do
+  @contact = Contact.find(1000)
+  erb :show_contact
 end
