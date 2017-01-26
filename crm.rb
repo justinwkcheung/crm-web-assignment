@@ -4,9 +4,9 @@
 require 'sinatra'
 require_relative 'contact'
 
-Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
-Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
-Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
+# Contact.create('Mark', 'Zuckerberg', 'mark@facebook.com', 'CEO')
+# Contact.create('Sergey', 'Brin', 'sergey@google.com', 'Co-Founder')
+# Contact.create('Steve', 'Jobs', 'steve@apple.com', 'Visionary')
 
 get '/' do
   # @crm_app_name = "Justin's CRM"
@@ -22,7 +22,12 @@ get '/contacts/new' do
 end
 
 post '/' do
-  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  Contact.create(
+  first_name: params[:first_name],
+  last_name: params[:last_name],
+  email: params[:email],
+  note: params[:note]
+  )
   redirect to('/')
 end
 
@@ -48,11 +53,7 @@ end
 put '/contacts/:id' do
   @contact = Contact.find(params[:id].to_i)
   if @contact
-    @contact.first_name = params[:first_name]
-    @contact.last_name = params[:last_name]
-    @contact.email = params[:email]
-    @contact.note = params[:note]
-
+    @contact.update(:first_name => params[:first_name], :last_name => params[:last_name], :email => params[:email], :note => params[:note])
     redirect to('/')
   else
     raise Sinatra::NotFound
@@ -67,4 +68,8 @@ delete '/contacts/:id' do
   else
     raise Sinatra::NotFound
   end
+end
+
+after do
+  ActiveRecord::Base.connection.close
 end
